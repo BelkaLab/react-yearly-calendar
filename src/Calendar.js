@@ -6,7 +6,8 @@ const propTypes = {
   year: React.PropTypes.number.isRequired,
   forceFullWeeks: React.PropTypes.bool,
   showDaysOfWeek: React.PropTypes.bool,
-  onPickDate: React.PropTypes.func
+  onPickDate: React.PropTypes.func,
+  dayToCSSClass: React.PropTypes.object
 };
 
 const defaultProps = {
@@ -14,7 +15,8 @@ const defaultProps = {
   forceFullWeeks: false,
   showDaysOfWeek: true,
   onPickDate: null,
-  selectedDay: moment()
+  selectedDay: moment(),
+  dayToCSSClass: {}
 };
 
 // Grabbed from the underscore.js source code (https://github.com/jashkenas/underscore/blob/master/underscore.js#L691)
@@ -41,7 +43,7 @@ export default class Calendar extends React.Component {
   }
 
   _monthDays(month) {
-    const { year, forceFullWeeks, selectedDay, onPickDate } = this.props;
+    const { year, forceFullWeeks, selectedDay, onPickDate, dayToCSSClass } = this.props;
     const monthStart = moment([year, month, 1]); // current day
 
     // number of days to insert before the first of the month to correctly align the weekdays
@@ -55,6 +57,7 @@ export default class Calendar extends React.Component {
     // day-generating loop
     return range(1, totalDays+1).map( i => {
       let day = moment([year, month, i - prevMonthDaysCount]);
+      let dayStr = day.toISOString();
 
       // pick appropriate classes
       let classes = [];
@@ -71,6 +74,10 @@ export default class Calendar extends React.Component {
 
       if( (i-1)%7 === 0 ) {
         classes.push('bolder');
+      }
+
+      if (dayStr in dayToCSSClass) {
+        classes.push(dayToCSSClass[dayStr]);
       }
 
       return (
