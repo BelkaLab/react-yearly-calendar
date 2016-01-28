@@ -1,0 +1,23 @@
+{
+  "name": "react-yearly-calendar-heatmap-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "NODE_ENV=production browserify -t [reactify --es6] main.js -o demo.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.10.6",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "react-yearly-calendar": "~1.0.5"
+  },
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "reactify": "^1.1.1"
+  }
+}

@@ -1,0 +1,150 @@
+body {
+  background-color: white;
+  font-family: sans-serif;
+}
+
+table.calendar {
+  border-collapse: collapse;
+}
+
+table.calendar thead {
+  background-color: lightblue;
+  margin-bottom: 3px;
+  border-bottom: 2px solid white
+}
+
+table.calendar thead th {
+  font-weight: normal;
+  padding: 10px 3px;
+}
+
+table.calendar thead th.bolder {
+  font-weight: bold;
+}
+
+table.calendar tbody {
+  font-size: 0.8em;
+}
+
+table.calendar td {
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid lightblue;
+  min-width: 15px;
+}
+
+table.calendar tr:last-child td {
+  border-bottom: none;
+}
+
+table.calendar td.month-name {
+  font-weight: bold;
+  text-align: left;
+  cursor: default;
+  border-left: none;
+}
+
+table.calendar td.prev-month,
+table.calendar td.next-month {
+  color: transparent;
+  cursor: default;
+  pointer-events: none;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAIAAABvrngfAAAAMUlEQVQImWNce+OZs4IkAxJg/PDjPzJ/74PnTGh8ZwVJJjQ+AwMDExofKoTMZ2BgAADaohRdwRxCnQAAAABJRU5ErkJggg==');
+}
+
+table.calendar td.selected {
+  color: red;
+  font-weight: bold;
+}
+
+table.calendar td.heatlevel0 {
+  background-color: #FCFCFC;
+}
+
+table.calendar td.heatlevel1 {
+  background-color: #F7C2BD;
+}
+
+table.calendar td.heatlevel2 {
+  background-color: #F2897F;
+}
+
+table.calendar td.heatlevel3 {
+  background-color: #ED5040;
+}
+
+table.calendar td.heatlevel4 {
+  background-color: #E81702;
+}
+
+table.calendar td.bolder {
+  font-weight: bold;
+}
+
+div.calendar-controls {
+  margin: 5px auto;
+  display: table;
+  font-size: 30px;
+}
+
+div.calendar-controls div {
+  display: inline;
+}
+
+div.calendar-controls .current-year {
+  margin: 0 30px;
+}
+
+div.calendar-controls .control {
+  font-weight: bolder;
+  color: #AA0000;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+div.calendar-controls .today {
+  position: absolute;
+  right: 15px;
+  line-height: 35px;
+  font-size: 0.6em;
+}
+
+/* Demo */
+
+div#calendar {
+  position: relative;
+  border: 1px solid lightblue;
+  background-color: aliceblue;
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+div#demo {
+  display: table;
+  margin: 50px auto;
+}
+
+h1,h2,h3,h4,h5 {
+  text-align: center;
+  color: #404040;
+}
+
+a {
+  color: #B10909;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+div.options {
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 30px;
+}
