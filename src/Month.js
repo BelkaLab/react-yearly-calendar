@@ -120,7 +120,7 @@ export class Month extends React.Component {
     // day-generating loop
     const days = [];
     range(firstDayOfWeek + 1, totalDays+firstDayOfWeek+1).map( i => {
-      let day = moment([year, month, i - prevMonthDaysCount]);
+      let day = moment.utc([year, month, i - prevMonthDaysCount]);
 
       // pick appropriate classes
       let classes = [];
